@@ -121,7 +121,6 @@ class PostController extends Controller
     public function showMain($id)
     {
         $post = Post::find($id);
-        Post::checkUserRequest($post->name_author);
         return view('post.show-main')->withPost($post);
     }
 }
