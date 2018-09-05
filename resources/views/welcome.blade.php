@@ -1,95 +1,58 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('master')
 
-        <title>Laravel</title>
+@section('title','Welcome')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('content')
+<div id="headerwrap">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h1>All the juiciest</h1>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+<br>
+<div class="container">
+  <div class="row centered">
+    <br>
+    <br>
+    <div class="col-lg-4">
+      <i class="fab fa-wikipedia-w"></i>
+      <div class="article-title">
+          <a href="{{route('wiki.index')}}">Wiki Search </a>
+      </div>
+      <div class="text-format">
+        <p>
+            Request to search the wiki and obtain results.
+        </p>
+        <p>Just do it</p>
+      </div>
+      <div class="col-lg-4">
+          <img class = "image-style" src="http://4.bp.blogspot.com/_C3QGqbgCb9k/S6fK6wjjogI/AAAAAAAAAL8/hDvbSVqdwEI/s350/wiki.png">
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <i class="fas fa-hand-holding-heart"></i>
+      <div class="article-title">
+        <a href="{{route('post.index')}}">Blog </a>
+      </div>
+      <div class="text-format">
+        <p>
+        View or <a href="{{route('post-panel.create')}}">create</a> a beautiful post that fits your want.</p>
+        <p>Just do it</p>
+      </div>
+      <div class="col-lg-4">
+        <img class = "image-style" src = "https://3.bp.blogspot.com/-YTcavYuOS9E/WIN8AfDFOyI/AAAAAAAACXw/Jd3y33GGowEo7gpSUY3ISiVAZcCTEV2tQCLcB/s320/Yang%2BMempengaruhi%2BHarga%2BBlog.jpg">
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div id = "app" class="article-title">
+        <quotes-component></quotes-component>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+@endsection
